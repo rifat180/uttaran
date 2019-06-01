@@ -14,26 +14,35 @@ from .models import (
 # Create your views here.
 def home(request):
     template_name = 'root/home.html'
+    name = LibraryName.objects.all()
+    name = name[0].name if name else 'Uttron'
+    missions = Mission.objects.all()
+    visions = Vision.objects.all()
+    goals = Goal.objects.all()
+    testimonials = Testimonial.objects.all()
+    event_pictures = EventPicture.objects.all()
     context = {
         'title': 'Welcome | Uttron',
-        'name': 'Uttron',
+        'name': name,
         'active_link': 'home',
-        'missions': Mission.objects.all(),
-        'visions': Vision.objects.all(),
-        'goals': Goal.objects.all(),
-        'testimonials': Testimonial.objects.all(),
-        'testi_len': 2,
-        'length': 3
+        'missions': missions,
+        'visions': visions,
+        'goals': goals,
+        'testimonials': testimonials,
+        'testi_len': len(testimonials),
+        'event_pictures': event_pictures,
+        'length': len(event_pictures)
     }
     return render(request, template_name, context)
 
 def books(request):
     template_name = 'root/books.html'
+    all_books = Book.objects.all()
     context = {
         'title': 'Books | Uttron',
         'name': 'Uttron',
         'active_link': 'books',
-        'all_books': Book.objects.all()
+        'all_books': all_books
     }
     return render(request, template_name, context)
 
