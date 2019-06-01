@@ -3,9 +3,7 @@
 {% block content %}
 
 <section id="slider-container">
-    {% load static %}
-    <div class="slider-image-container" style="background: linear-gradient(rgba(0, 0, 0, 0.171), rgba(0, 0, 0, 0.836)),
-        url({% static 'image/bg.jpg' %}) center no-repeat;"></div>
+    <div class="slider-image-container"></div>
     <div class="slider-content content">
         <h3>Books are our best companion.</h3>
         <p>And we are here to help your making a better relationship with books.</p>
@@ -65,8 +63,7 @@
     <div id="testi">
         <div class="testimonial-container" style="width: {{ testi_len }}00%;">
             {% for testimonial in testimonials %}
-            <div class="window"
-                style="background: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.651)), url({{ testimonial.picture.url }}) center no-repeat; background-size: cover;">
+            <div class="window">
                 <div class="spech">{{ testimonial.testimonial }}</div>
                 <div class="writer">- {{ testimonial.writer }}</div>
             </div>
@@ -93,7 +90,7 @@
     <div class="event-slider">
         <div class="slider-container" style="width: {{ length }}00%;">
             {% for item in event_pictures %}
-            <div class="sliding-window" style="background: url({{ item.picture.url }}) center no-repeat;">
+            <div class="sliding-window">
                 <h3 id="pic-title">{{ item.title }}</h3>
             </div>
             {% endfor %}
