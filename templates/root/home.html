@@ -3,7 +3,9 @@
 {% block content %}
 
 <section id="slider-container">
-    <div class="slider-image-container"></div>
+    {% load static %}
+    <div class="slider-image-container" style="background: linear-gradient(rgba(0, 0, 0, 0.171), rgba(0, 0, 0, 0.836)),
+    url({% static 'image/bg.jpg' %}) center no-repeat;"></div>
     <div class="slider-content content">
         <h3>Books are our best companion.</h3>
         <p>And we are here to help your making a better relationship with books.</p>
