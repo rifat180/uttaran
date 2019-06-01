@@ -36,7 +36,7 @@
             <div class="card-body">
                 <ul>
                     {% for vision in visions %}
-                    <li>vision</li>
+                    <li>{{ vision }}</li>
                     {% endfor %}
                 </ul>
             </div>
@@ -65,7 +65,7 @@
     <div id="testi">
         <div class="testimonial-container" style="width: {{ testi_len }}00%;">
             {% for testimonial in testimonials %}
-            <div class="window">
+            <div class="window" style="background: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.651)), url({{ testimonial.picture.url }}) center no-repeat;">
                 <div class="spech">{{ testimonial.testimonial }}</div>
                 <div class="writer">- {{ testimonial.writer }}</div>
             </div>
