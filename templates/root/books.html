@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="book-container">
+    {% if all_books %}
+    {% for book in all_books %}
+    <a href="/books/{{book.id}}/details">
+        <div class="book-card" style="background: url({{ book.photo.url }}) center no-repeat;">
+            <div class="book-details">
+                <h3>{{ book.name }}</h3>
+                <p>{{ book.authorName }}</p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+    {% else %}
+    <h3>There is no book added yet</h3>
+    {% endif %}
+</div>
+
+{% endblock %}
