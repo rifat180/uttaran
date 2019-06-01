@@ -16,7 +16,7 @@ def home(request):
     template_name = 'root/home.html'
     context = {
         'title': 'Welcome | Uttron',
-        'name': LibraryName.objects.all()[-1],
+        'name': 'Uttron',
         'active_link': 'home',
         'missions': Mission.objects.all(),
         'visions': Vision.objects.all(),
@@ -30,7 +30,7 @@ def books(request):
     template_name = 'root/books.html'
     context = {
         'title': 'Books | Uttron',
-        'name': LibraryName.objects.all()[-1],
+        'name': 'Uttron',
         'active_link': 'books',
         'all_books': Book.objects.all()
     }
@@ -40,7 +40,7 @@ def book_details(request):
     template_name = 'root/book_details.html'
     context = {
         'title': 'Book Details | Uttron',
-        'name': LibraryName.objects.all()[0],
+        'name': 'Uttron',
         'active_link': 'books',
         'book': Book.objects.get(pk=id)
     }
@@ -54,7 +54,7 @@ def members(request):
     members = [member for member in all_members if member.designation.lower()== 'member']
     context = {
         'title': 'Members | Uttron',
-        'name': LibraryName.objects.all()[-1],
+        'name': 'Uttron',
         'active_link': 'members',
         'advisors': advisors,
         'committee': committee,
@@ -65,7 +65,7 @@ def members(request):
 def member_details(request):
     template_name = 'root/member_details.html'
     context = {
-        'title': 'Welcome | Uttron',
+        'title': 'Member Details | Uttron',
         'name': 'Uttron',
         'active_link': 'members',
     }
@@ -74,7 +74,7 @@ def member_details(request):
 def about(request):
     template_name = 'root/about.html'
     context = {
-        'title': 'Welcome | Uttron',
+        'title': 'About | Uttron',
         'name': 'Uttron',
         'active_link': 'about',
     }
@@ -83,7 +83,7 @@ def about(request):
 def contacts(request):
     template_name = 'root/contacts.html'
     context = {
-        'title': 'Welcome | Uttron',
+        'title': 'Contacts | Uttron',
         'name': 'Uttron',
         'active_link': 'contacts',
     }
