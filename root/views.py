@@ -21,10 +21,8 @@ def home(request):
         'missions': Mission.objects.all(),
         'visions': Vision.objects.all(),
         'goals': Goal.objects.all(),
-        'testimonials': Testimonial.objects.all(),
-        'testi_len': len(Testimonial.objects.all()),
-        'event_pictures': EventPicture.objects.all(),
-        'length': len(EventPicture.objects.all())
+        'testi_len': 3,
+        'length': 3
     }
     return render(request, template_name, context)
 
