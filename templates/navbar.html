@@ -1,0 +1,55 @@
+<nav id="main-nav" class="container">
+    <div id="hamburger">
+        <i class="fas fa-hamburger"></i>
+    </div>
+    <a href="#!" class="logo">{{ name }}</a>
+    <span class="sign-in">
+        <a href="/admin">Admin</a>
+    </span>
+</nav>
+
+<nav class="side-nav">
+    <div class="back-arrow-container">
+        <div class="back-arrow">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="nav-link-container {% if active_link == 'home' %} nav-link-active {% endif %}">
+        <a href="/" class="nav-link">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+    </div>
+    <div class="nav-link-container {% if active_link == 'books' %} nav-link-active {% endif %}">
+        <a href="/books" class="nav-link">
+            <i class="fas fa-info"></i>
+            <span>Books</span>
+        </a>
+    </div>
+    <div class="nav-link-container {% if active_link == 'members' %} nav-link-active {% endif %}">
+        <a href="/members" class="nav-link">
+            <i class="fas fa-users"></i>
+            <span>Members</span>
+        </a>
+    </div>
+    <div class="nav-link-container {% if active_link == 'about' %} nav-link-active {% endif %}">
+        <a href="/about" class="nav-link">
+            <i class="fas fa-info"></i>
+            <span>About Us</span>
+        </a>
+    </div>
+    <div class="nav-link-container {% if active_link == 'contact' %} nav-link-active {% endif %}">
+        <a href="/contacts" class="nav-link">
+            <i class="fas fa-phone"></i>
+            <span>Contact Us</span>
+        </a>
+    </div>
+    <div class="divider"></div>
+    <div class="nav-link-container">
+        <a href="/admin" class="nav-link">
+            <i class="fas fa-cogs"></i>
+            <span>Admin Panel</span>
+        </a>
+    </div>
+</nav>

@@ -1,6 +1,136 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Home Page</h1>
-<h3>Date : {% now 'jS F Y H:i:s' %}</h3>
+
+<section id="slider-container">
+    {% load static %}
+    <div class="slider-image-container" style="background: linear-gradient(rgba(0, 0, 0, 0.171), rgba(0, 0, 0, 0.836)),
+        url({% static 'image/bg.jpg' %}) center no-repeat;"></div>
+    <div class="slider-content content">
+        <h3>Books are our best companion.</h3>
+        <p>And we are here to help your making a better relationship with books.</p>
+        <div class="button-container">
+            <a href="/contacts" class="button">Become A Member</a>
+        </div>
+    </div>
+</section>
+
+{% if missions or visions or goals %}
+<section class="moto">
+    <div class="content">
+        {% if missions %}
+        <div class="card">
+            <div class="card-title">Mission</div>
+            <div class="card-body">
+                <ul>
+                    {% for mission in missions %}
+                    <li>{{ mission }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+        {% if visions %}
+        <div class="card">
+            <div class="card-title">Vision</div>
+            <div class="card-body">
+                <ul>
+                    {% for vision in visions %}
+                    <li>vision</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+        {% if goals %}
+        <div class="card">
+            <div class="card-title">Goal</div>
+            <div class="card-body">
+                <ul>
+                    {% for goal in goals %}
+                    <li>{{ goal }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endif %}
+
+{% if testimonials %}
+<section class="testimonial content">
+    <h2>Testimonials</h2>
+
+    <div id="testi">
+        <div class="testimonial-container" style="width: {{ testi_len }}00%;">
+            {% for testimonial in testimonials %}
+            <div class="window"
+                style="background: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.651)), url({{ testimonial.picture.url }}) center no-repeat; background-size: cover;">
+                <div class="spech">{{ testimonial.testimonial }}</div>
+                <div class="writer">- {{ testimonial.writer }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<script>
+    let counterx = 0;
+    let lengthx = {{ testi_len }};
+    let sliderx = document.querySelector('.testimonial-container');
+    setInterval(function () {
+        sliderx.style.left = -counterx * 100 + '%';
+        counterx += 1;
+        if (counterx >= lengthx) {
+            counterx = 0;
+        }
+    }, 10000);
+
+</script>
+{% endif %}
+
+<section class="event-contacts">
+    <div class="event-slider">
+        <div class="slider-container" style="width: {{ length }}00%;">
+            {% for item in event_pictures %}
+            <div class="sliding-window" style="background: url({{ item.picture.url }}) center no-repeat;">
+                <h3 id="pic-title">{{ item.title }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        let counter = 0;
+        let length = {{ length }};
+        let slider = document.querySelector('.slider-container');
+        setInterval(function () {
+            slider.style.left = -counter * 100 + '%';
+            counter += 1;
+            if (counter >= length) {
+                console.log(counter);
+                counter = 0;
+            }
+        }, 5000);
+    </script>
+    <div class="contact-form">
+        <h3>Want to tell us something?</h3>
+        <form action="/" method="post">
+            <div class="input-field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="input-field">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Your email" required>
+            </div>
+            <div class="input-field">
+                <label for="message">Message</label>
+                <textarea name="message" required placeholder="Your message"></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
+
+
 {% endblock %}
