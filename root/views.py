@@ -21,7 +21,8 @@ def home(request):
         'missions': Mission.objects.all(),
         'visions': Vision.objects.all(),
         'goals': Goal.objects.all(),
-        'testi_len': 3,
+        'testimonials': Testimonial.objects.all(),
+        'testi_len': 2,
         'length': 3
     }
     return render(request, template_name, context)
