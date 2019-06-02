@@ -2,10 +2,21 @@
 
 {% block content %}
 
-<div style="padding: 10px;">
-  <h2>Some Things About Us</h2>
-  {% for paragraph in paragraphs %}
-  <p>{{ paragraph.paragraph }}</p>
-  {% endfor %}
+<div class="content" style="padding: 10px;">
+  {% load static %}
+  <div class="a-card" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url({% static 'image/bg.jpg' %}) center no-repeat; background-size: cover;">
+    <img src="{% static 'image/uttaran_logo.jpg' %}" alt="Uttron Logo">
+    <div class="a-head">
+      <h2>{{ name }}</h2>
+      <p>Always spreading the fragrance of knowledge.</p>
+    </div>
+  </div>
+
+  <div class="a-about">
+    {% for paragraph in paragraphs %}
+    <h3>{{ paragraph.title }}</h3>
+    <p>{{ paragraph.paragraph }}</p>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

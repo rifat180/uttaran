@@ -2,51 +2,49 @@
 
 {% block content %}
 
-<div class="book-container">
+<div class="members content">
 
   <h2 class="head-line">Advisors</h2>
-
-  {% for member in advisors %}
-  <a href="/members/{{member.id}}/details">
-    <div class="book-card" style="background-image: url({{ member.photo.url }});">
-      <div class="book-details">
-        <h3>{{ member.name }}</h3>
-        <p>{{ member.designation }}</p>
+  <div class="member-container">
+    {% for member in advisors %}
+    <a href="/members/{{member.id}}/details">
+      <div class="member-card" style="background-image: url({{ member.photo.url }});">
+        <div class="member-details">
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.designation }}</p>
+        </div>
       </div>
-    </div>
-  </a>
-  {% endfor %}
-
-
+    </a>
+    {% endfor %}
+  </div>
 
   <h2 class="head-line">Committee</h2>
-
-  {% for member in committee %}
-  <a href="/members/{{member.id}}/details">
-    <div class="book-card" style="background-image: url({{ member.photo.url }});">
-      <div class="book-details">
-        <h3>{{ member.name }}</h3>
-        <p>{{ member.designation }}</p>
+  <div class="member-container">
+    {% for member in committee %}
+    <a href="/members/{{member.id}}/details">
+      <div class="member-card" style="background-image: url({{ member.photo.url }});">
+        <div class="member-details">
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.designation }}</p>
+        </div>
       </div>
-    </div>
-  </a>
-  {% endfor %}
-
+    </a>
+    {% endfor %}
+  </div>
 
 
   <h2 class="head-line">Members</h2>
-
-  {% for member in members %}
-  <a href="/members/{{member.id}}/details">
-    <div class="book-card" style="background-image: url({{ member.photo.url }});">
-      <div class="book-details">
-        <h3>{{ member.name }}</h3>
-        <p>{{ member.designation }}</p>
+  <div class="member-container member">
+    {% for member in members %}
+    <a href="/members/{{member.id}}/details">
+      <div class="member-card" style="background-image: url({{ member.photo.url }});">
+        <div class="member-details">
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.designation }}</p>
+        </div>
       </div>
-    </div>
-  </a>
-  {% endfor %}
-
+    </a>
+    {% endfor %}
+  </div>
 </div>
-
 {% endblock %}

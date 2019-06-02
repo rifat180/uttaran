@@ -1,5 +1,89 @@
-@media screen and (max-width: 400px) {
-  .slider-content {
-    width: 340px;
+@media screen and (max-width: 900px) {
+  .card {
+    width: 230px;
+  }
+  .card-body {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 800px) {
+  #main-nav .logo {
+    font-size: 2.2em;
+  }
+  .content {
+    width: calc(100vw - 20px);
+  }
+  .slider-content h3 {
+    font-size: 2.2em;
+  }
+  .slider-content p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+  .moto {
+    padding: 100px 10px;
+  }
+  .moto .content {
+    display: block;
+    width: calc(100% - 140px);
+  }
+  .moto .content .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .testimonial h2 {
+    font-size: 1.7em;
+    margin: -40px 0px 40px 0px;
+    text-align: center;
+  }
+  #testi {
+    height: 400px;
+    width: 100%;
+  }
+  .testimonial .window .spech {
+    font-size: 1em;
+  }
+  .testimonial .window .writer {
+    font-size: 0.9em;
+  }
+  .event-contacts {
+    display: block;
+  }
+  .event-contacts h3 {
+    font-size: 1.7em;
+  }
+  .event-slider {
+    height: 400px;
+    margin-bottom: 40px;
+  }
+  .book-details-container .book {
+    display: block;
+    padding: 5px 0px;
+  }
+  .book-details-container .book .image {
+    width: calc(100% - 20px);
+  }
+}
+@media screen and (max-width: 600px) {
+  #main-nav .logo {
+    font-size: 1.8em;
+  }
+  .moto .content {
+    width: calc(100% - 40px);
+  }
+  .book-details-container {
+    padding: 10px;
+  }
+  .a-head h2 {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  #main-nav .logo {
+    font-size: 1.3em;
+  }
+  .moto .content {
+    width: calc(100% - 10px);
   }
 }
