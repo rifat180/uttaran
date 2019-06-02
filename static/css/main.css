@@ -373,7 +373,7 @@
     background-size: cover;
     flex: 1;
   }
-  .sliding-window h3 {
+  .sliding-window .pic-title {
     color: #ddd;
     position: absolute;
     bottom: 30px;
