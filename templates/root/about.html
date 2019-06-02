@@ -2,6 +2,10 @@
 
 {% block content %}
 
-<h1>About Page</h1>
-
+<div style="padding: 10px;">
+  <h2>Some Things About Us</h2>
+  {% for paragraph in paragraphs %}
+  <p>{{ paragraph.paragraph }}</p>
+  {% endfor %}
+</div>
 {% endblock %}

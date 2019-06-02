@@ -13,8 +13,9 @@
   }
   main {
     min-height: 90vh;
+    height: auto;
   }
-  main > div {
+  .false-div {
     height: 70px;
   }
   

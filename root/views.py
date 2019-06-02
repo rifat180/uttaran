@@ -37,20 +37,24 @@ def home(request):
 
 def books(request):
     template_name = 'root/books.html'
+    name = LibraryName.objects.all()
+    name = name[0].name if name else 'Uttron'
     all_books = Book.objects.all()
     context = {
         'title': 'Books | Uttron',
-        'name': 'Uttron',
+        'name': name,
         'active_link': 'books',
         'all_books': all_books
     }
     return render(request, template_name, context)
 
-def book_details(request):
+def book_details(request, id):
     template_name = 'root/book_details.html'
+    name = LibraryName.objects.all()
+    name = name[0].name if name else 'Uttron'
     context = {
         'title': 'Book Details | Uttron',
-        'name': 'Uttron',
+        'name': name,
         'active_link': 'books',
         'book': Book.objects.get(pk=id)
     }
@@ -58,13 +62,15 @@ def book_details(request):
 
 def members(request):
     template_name = 'root/members.html'
+    name = LibraryName.objects.all()
+    name = name[0].name if name else 'Uttron'
     all_members = Member.objects.all()
     advisors = [ member for member in all_members if member.designation.lower() == 'advisor' ]
     committee = [member for member in all_members if member.designation.lower() == 'committee member']
     members = [member for member in all_members if member.designation.lower()== 'member']
     context = {
         'title': 'Members | Uttron',
-        'name': 'Uttron',
+        'name': name,
         'active_link': 'members',
         'advisors': advisors,
         'committee': committee,
@@ -72,29 +78,38 @@ def members(request):
     }
     return render(request, template_name, context)
 
-def member_details(request):
+def member_details(request, id):
     template_name = 'root/member_details.html'
+    name = LibraryName.objects.all()
+    name = name[0].name if name else 'Uttron'
     context = {
         'title': 'Member Details | Uttron',
-        'name': 'Uttron',
+        'name': name,
         'active_link': 'members',
+        'member': Member.objects.get(pk = id)
     }
     return render(request, template_name, context)
 
 def about(request):
     template_name = 'root/about.html'
+    name = LibraryName.objects.all()
+    name = name[0].name if name else 'Uttron'
+    paragraph = About.objects.all()
     context = {
         'title': 'About | Uttron',
-        'name': 'Uttron',
+        'name': name,
         'active_link': 'about',
+        'paragraphs': paragraph,
     }
     return render(request, template_name, context)
 
 def contacts(request):
     template_name = 'root/contacts.html'
+    name = LibraryName.objects.all()
+    name = name[0].name if name else 'Uttron'
     context = {
         'title': 'Contacts | Uttron',
-        'name': 'Uttron',
+        'name': name,
         'active_link': 'contacts',
     }
     return render(request, template_name, context)

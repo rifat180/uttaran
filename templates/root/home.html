@@ -58,6 +58,11 @@
 </section>
 {% endif %}
 
+<!--
+
+     style="background: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.651)), url({{ testimonial.picture.url }}) center no-repeat;"
+-->
+
 {% if testimonials %}
 <section class="testimonial content">
     <h2>Testimonials</h2>
@@ -92,7 +97,7 @@
     <div class="event-slider">
         <div class="slider-container" style="width: {{ length }}00%;">
             {% for item in event_pictures %}
-            <div class="sliding-window">
+            <div class="sliding-window" style="background: linear-gradient(rgba(0, 0, 0, 0.199), rgba(0, 0, 0, 0.651)), url({{ item.picture.url }}) center no-repeat;">
                 <h3 id="pic-title">{{ item.title }}</h3>
             </div>
             {% endfor %}

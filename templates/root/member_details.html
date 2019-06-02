@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h1>Member Details Page</h1>
-
+<div class="book-details-container">
+  <div class="book">
+    <div class="image"  style="background-image: url({{ member.photo.url }});"></div>
+    <div class="name">
+      <h2>{{ member.name }}</h2>
+      <p style="margin-bottom: 10px;">{{ member.designation }}</p>
+      <div class="details">
+        <p>{{ member.details }}</p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
